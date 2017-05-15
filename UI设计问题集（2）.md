@@ -118,8 +118,8 @@ Logo  导航栏  banner(广告图片)  
 ### 指示标和面包屑的作用：
 使用户在第一时间知道自己所访问的页面属于哪个栏目和访问路径，快速找到自己所找的东西
 ### 举出几个有关网页设计的网站：
-* 优设网：http://www.uisdc.com/
-* Lcon搜索：http://www.iconpng.com/
-* <站酷：http://www.zcool.com.cn/
-* <黄蜂网：http://sc.woofeng.cn/
-* <花瓣网：http://huaban.com/ 
+* 优设网：<http://www.uisdc.com/>
+* Lcon搜索：<http://www.iconpng.com/>
+* 站酷：<http://www.zcool.com.cn/>
+* 黄蜂网：<http://sc.woofeng.cn/>
+* 花瓣网：<http://huaban.com/> 
