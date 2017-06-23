@@ -1,0 +1,95 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>河北中学</title>
+<link href="{CSS_PATH}/hbschool/content.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="{JS_PATH}/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="mybody">
+    	<div id="top">
+        	<div class="menu">
+            	<ul>
+                	<li>网站首页</li>
+                    <li><a href="list.html">学校概况</a></li>
+                    <li><a href="#">规章制度</a></li>
+                    <li><a href="#">德育网</a></li>
+                    <li><a href="#">教研网</a></li>
+                    <li><a href="#">名师风采</a></li>
+                    <li><a href="#">高考专栏</a></li>
+                    <li><a href="#">图书馆</a></li>
+                    <li><a href="#">校友会</a></li>
+                    <li><a href="#">河中论坛</a></li>
+                    <li><a href="#">查询系统</a></li>
+                    <li><a href="#" class="specil">东校区</a></li>                    
+                </ul>
+            </div>           
+        </div>
+      <div id="dh">
+            	<h1><a href="index.html">河北中学首页</a> - <a href="list.html">学校概况</a> - <a href="#">校园文化</a></h1>
+            	<div id="search">
+            <input name="search" type="text" class="search_text" /><input name="searchbut" type="button" class="search_but" value=" " />
+            </div>
+          </div>
+        <div id="left">
+        	<div id="hot">
+            	<h2></h2>
+                <ul>
+                	<li><a href="#">我校举行五四表彰大会暨成人仪式</a></li> 
+					<li><a href="#">河北中学4月份家长开放日公告</a> </li>
+					<li><a href="#">教育处组织学生收看《2013年中小学… </a></li>
+					<li><a href="#">高一年级励志踏青活动花絮 </a></li>
+					<li><a href="#">我校组织高一年级励志踏青活动</a></li>
+					<li><a href="#">我校举行五四表彰大会暨成人仪式</a></li> 
+					<li><a href="#">河北中学4月份家长开放日公告</a></li> 
+					<li><a href="#">教育处组织学生收看《2013年中小学…</a></li>
+                </ul>
+            </div>
+          	<div id="pic">
+          		<h1></h1>
+	           	<div id="colee" >
+					<div id="colee1">
+                    
+					<!-- <p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+					<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+					<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+					<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+					<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+					<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+                    {pc:content action="position" posid="2" num="2" order="listorder DESC"}
+                       {loop $data $v} -->
+                          <p> <img src="{$v['thumb']}" width="200" height="150" />{$v['title']}</p>
+                       {/loop}
+                    {/pc}
+				</div>
+				<div id="colee2"></div>
+			</div>
+        </div>
+    </div>
+    <div id="right">
+        <h1>{$title}</h1>
+        <h2>作者：{$username}}&nbsp;&nbsp;&nbsp;&nbsp;    图片来源：本站原创&nbsp;&nbsp;&nbsp;&nbsp;     点击数： <span id="hits"></span>&nbsp;&nbsp;&nbsp;&nbsp;     更新时间：{$updatetime}</h2>
+            {$content}
+        <div class="next">
+        <span class="font_next">上一篇：</span>
+        <a href="{$previous_page['url']}">{$previous_page['title']}</a>
+        <span class="font_next">下一篇：</span>
+        <a href="{$next_page['url']}">{$next_page['title']}</a></div>
+      </div>
+ 
+    </div>
+	<div id="foot">	  
+ 	Copyright © 2008－2013 http://www.***.com All Rights Reserved   网站备案：冀ICP备00000000号
+	</div>
+</body>
+
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}">
+    
+
+</script>
+
+</html>
+ 
