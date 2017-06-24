@@ -1,157 +1,127 @@
-<！DOCTYPE html PUBLIC “ -  // W3C // DTD XHTML 1.0 Transitional // EN”  “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd” >
-< html  xmlns = “ http://www.w3.org/1999/xhtml ” >
-< head >
-< meta  http-equiv = “ Content-Type ”  content = “ text / html; charset = utf-8 ” />
-< 标题 >河北中学</ 标题 >
-< 链路 HREF = “ {} CSS_PATH /HBschool/news.css ” 相对 = “样式表” 类型 = “文本/ CSS ” />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>河北中学</title>
+<link href="{CSS_PATH}/hbschool/news.css" rel="stylesheet" type="text/css" />
 
-</ head >
+</head>
 
-< body >
-	< div  id = “ mybody ” >
-    	< div  id = “ top ” >
-        	< div  class = “ menu ” >
-            	< ul >
-                < li >网站首页</ li > <！ -没有任何效果只获取后边的是11个不需要动态获取- >
-                     {PC：内容 
-                    <！ -获取出来- >
-                   行动=“类别”
-                   catid =“0” <！ -获得一级栏目- >
-                   order =“listorder ASC”
-                   NUM = “11”
-                   SITEID = “$ SITEID”}
+<body>
+	<div id="mybody">
+    	<div id="top">
+        	<div class="menu">
+            	<ul>
+                	<li>网站首页</li>
+                    <!-- <li><a href="#">学校概况</a></li>
+                    <li><a href="#">规章制度</a></li>
+                    <li><a href="#">德育网</a></li>
+                    <li><a href="#">教研网</a></li>
+                    <li><a href="#">名师风采</a></li>
+                    <li><a href="#">高考专栏</a></li>
+                    <li><a href="#">图书馆</a></li>
+                    <li><a href="#">校友会</a></li>
+                    <li><a href="#">河中论坛</a></li>
+                    <li><a href="#">查询系统</a></li>
+                    <li><a href="#" class="specil">东校区</a></li>      -->   
+                    {pc:content action="category" catid="0" num="11" siteid="$siteid" order="listorder ASC"} 
+                      {loop $data $v}
+                        {if $v['catid']==19}
+                          <li><a href="{$v['url']}" class="special">{$v['catname']}</a></li>
+                        {else} 
+                          <li><a href="{$v['url']}">{$v['catname']}</a></li>
+                        {/if}
+                      {/loop}
+                    {/pc}                             
+                </ul>
+            </div>           
+        </div>
+      <div id="dh">
+            	<h1><a href="index.html">河北中学首页</a> - <a href="#">学校概况</a> - 所获荣誉</h1>
+            	<div id="search">
+            <input name="search" type="text" class="search_text" /><input name="searchbut" type="button" class="search_but" value=" " />
+            </div>
+          </div>
+        <div id="left">
+        	<div id="leftmenu">
 
-                   <！ -显示出来$ V代表11条数据- >
-
-                    {loop $ data $ v}
-                    {if $ v ['catid'] == 20}
-                        < 锂 > < 一个 HREF = “ {$ V [ 'URL']} ” 类 = “ specil ” > {$ V [ 'catname']} </ 一 > </ 李 >
-                    {其他}
-                        <！ -这里面是找一对李写出结构- >
-                        < 锂 > < 一个 HREF = “ {$ V [ 'URL']} ” > {$ V [ 'catname']} </ 一 > </ 李 >
-                        <！ -在数据库中的类别中找到栏目名称对应的内容- >
-                    {/如果}
-                            
-
-                    {/回路} {/ PC}
-
-                	<！ - <li>网站首页</ li>
-                    <li> <a href="#">学校概况</a> </ li>
-                    <li> <a href="#">规章制度</a> </ li>
-                    <li> <a href="#">德育网</a> </ li>
-                    <li> <a href="#">教研网</a> </ li>
-                    <li> <a href="#">名师风采</a> </ li>
-                    <li> <a href="#">高考专栏</a> </ li>
-                    <li> <a href="#">图书馆</a> </ li>
-                    <li> <a href="#">校友会</a> </ li>
-                    <li> <a href="#">河中论坛</a> </ li>
-                    <li> <a href="#">查询系统</a> </ li>
-                    <li> <a href="#" class="specil">东校区</a> </ li> - >                    
-                </ ul >
-            </ div >           
-        </ div >
-      < div  id = “ dh ” >
-            	< H1 > < 一个 HREF = “ index.html的” >河北中学首页</ 一 > - < 一个 HREF = “＃” >学校概况</ 一 > -所获荣誉</ H1 >
-            	< div  id = “ search ” >
-            < input  name = “ search ”  type = “ text ”  class = “ search_text ” /> < input  name = “ searchbut ”  type = “ button ”  class = “ search_but ”  value = “  ” />
-            </ div >
-          </ div >
-        < div  id = “ left ” >
-        	< div  id = “ leftmenu ” >
-            <！ -当前栏目的栏目名称- >
-            	< h1 > {$ catname} </ h1 >
-                < ul >
-                    <！ -获取名字- >  
-                <？PHP
-                    $ firstcatid = explode（'，'，$ arrchildid）;
-                    $ firstcatid = $ firstcatid [0];
-                ？>
-
-                     {PC：内容 
-                    <！ -获取出来- >
-                   行动=“类别”
-                   CATID = “$ CATID” 
-                   order =“listorder ASC”
-                   NUM = “5”}
-
-                   
-
-                    {loop $ data $ v}
-                    {if $ v ['catid'] == $ firstcatid}
-
-                            < 一个 HREF = “ {$ V [ 'URL']} ” 类 = “ DQ ” > {$ V [ 'catname']} </ 一 >
-                            <？php $ curname = $ v ['catname']？> <！ -定义成全局变量赋值给$ curname - >
-                    {其他}  
-                            < 一个 HREF = “ {$ V [ 'URL']} ” > {$ V [ 'catname']} </ 一 >
-                            
-                    {/如果}
-                    {/回路} {/ PC}
-                	<！ - <a href =“＃”>领导简介</a>
+            	<h1>{$catname}</h1>
+                <ul>
+                	<!-- <a href="#">领导简介</a>
                     <a href="#">学校简介</a>
                     <a href="#">光荣历史</a>
-                    <a href="#" class="dq">获得荣誉</a>
-                    <a href="#">图说河中</a> - >
-              </ ul >
-            </ div >
-          < div  id = “ pic ” >
-          < h1 > </ h1 >
-           	< div  id = “ colee ” >
-< div  id = “ colee1 ” >
-< p > < IMG  SRC = “ {} IMG_PATH /HBschool/pic.gif ” 宽度 = “ 200 ” 高度 = “ 150 ” /> 2010 - 2011年度先进单位</ p >
-< p > < IMG  SRC = “ {} IMG_PATH /HBschool/pic.gif ” 宽度 = “ 200 ” 高度 = “ 150 ” /> 2010 - 2011年度先进单位</ p >
-< p > < IMG  SRC = “ {} IMG_PATH /HBschool/pic.gif ” 宽度 = “ 200 ” 高度 = “ 150 ” /> 2010 - 2011年度先进单位</ p >
-< p > < IMG  SRC = “ {} IMG_PATH /HBschool/pic.gif ” 宽度 = “ 200 ” 高度 = “ 150 ” /> 2010 - 2011年度先进单位</ p >
-< p > < IMG  SRC = “ {} IMG_PATH /HBschool/pic.gif ” 宽度 = “ 200 ” 高度 = “ 150 ” /> 2010 - 2011年度先进单位</ p >
-< p > < IMG  SRC = “ {} IMG_PATH /HBschool/pic.gif ” 宽度 = “ 200 ” 高度 = “ 150 ” /> 2010 - 2011年度先进单位</ p >
+                    <a href="#" class="dq">所获荣誉</a>
+                    <a href="#">图说河中</a> -->
+                    <?php
+                      $firstcatid = explode(',', $arrchildid);
+                      $firstcatid = $firstcatid[0];
+                    ?>
+                    {pc:content action="category" catid="$catid" order="listorder ASC"}
+                      {loop $data $v}
+                        {if $v['catid'] == $firstcatid}
+                          <a href="{$v['url']}" class="dq">{$v['catname']}</a>
+                          <?php $curname = $v['catname']?>
+                        {else}
+                          <a href="{$v['url']}">{$v['catname']}</a>
 
-</ div >
-< div  id = “ colee2 ” > </ div >
-</ div >
+                        {/if} 
+                      }
+                      {/loop}
+                    {/pc}
+              </ul>
+            </div>
+          <div id="pic">
+          <h1></h1>
+           	<div id="colee" >
+<div id="colee1">
+<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+
+</div>
+<div id="colee2"></div>
+</div>
              
-            </ div >
-        </ div >
+            </div>
+        </div>
         
-        < div  id = “ right ” >
-        	< h1 > {$ curname} </ h1 >
-            < ul >
-            {pc：content action =“lists”catid =“$ catid”num =“1”page =
-“页面”}
-    {loop $ data $ v}
-            	<！ - li> <a href="#"> [组图]我校被授予2010  -  2011年度省级文明单位</a> <span class =“newsdate”> 2013-05-10 </ span > </ LI>
-	<li> <a href="#"> [组图]我校被评为“石家庄市2010  -  2011年度文明单位”</a> <span class =“newsdate”> 2013-05-10 </ span > </ LI>	
-	<li> <a href="#"> [图文]我校被授予“2012年高中教学先进单位”“2012年高中增值奖”等荣誉称号</a> <span class =“newsdate”> 2013 -05-10 </ SPAN> </ LI>
-	<li> <a href="#"> [组图]我校被授予“河北省体育传统项目学校”荣誉称号</a> <span class =“newsdate”> 2013-05-10 </ span> </ LI>
-	[组图]我校被授予“影子教师”培训基地<span class =“newsdate”> 2013-05-10 </ span> </ li>		
-	<li> [组图]我校荣获“2010  -  2012年石家庄市创先争优先进基层党组织荣誉称号<span class =”newsdate“> 2013-05-10 </ span> </ li>
-	<li> [组图]我校荣获石家庄市妇联系统先进集体称号<span class =“newsdate”> 2013-05-10 </ span> </ li>
-	荣誉称号<span class =“newsdate”> 2013-05-10 </ span> </ li>
-	荣获称号<span class =“newsdate”> 2013-05-10 </ span> </ li>	
-	荣誉称号我们荣获“2010年度住房公积金管理先进单位”2013-05-10 </ span> </ li>
-	荣誉称号<span class =“newsdate”> 2013-05-10 </ span> </ li>
-	<li> [组图]我校荣获石家庄市2008  -  2009年度文明单位光荣称号<span class =“newsdate”> 2013-05-10 </ span> </ li>
-	<li> [图文]我校党委荣获2009年度先进基层党组织称号<span class =“newsdate”> 2013-05-10 </ span> </ li>	
-	<li> [组图]我校荣获首批“河北省现代教育技术示范学校”<span class =“newsdate”> 2013-05-10 </ span> </ li>
-	</ li> </ span> </ li> </ li> </ li> </ li>	
-	荣誉称号我们荣获石家庄市荣誉称号<span class =“newsdate”> 2013-05-10 </ span> </ li>
-	<li> [图文]我校荣获“2007年度实绩突出领导班子”称号<span class =“newsdate”> 2013-05-10 </ span> </ li>	
-	<li> [图]我校荣获“2007年度民主评议工作先进单位”荣誉<span class =“newsdate”> 2013-05-10 </ span> </ li>
-	<li> [组图]我校荣获石家庄市2008年中小学田径运动会“体育道德风尚奖”<span class =“newsdate”> 2013-05-10 </ span> </ li>
-	<li> [组图]我校被石家庄市委市政府评为“双争共同文明校园”<span class =“newsdate”> 2013-05-10 </ span> </ li>
-             - > 
-              < 锂 > < 一个 HREF = “ {$ V [ 'URL']} ” > {str_cut（$ V [ '标题']，80）} </ 一 > < 跨度 类 = “ newsdate ” > {日期（'YM -d'，$ v ['inputtime']）} </ span > </ li >
-    {/循环}
-{/ pc} </ ul >
-            < div  id = “ page ” >
-            {$}页
-	<！ - <span class =“disabled”>前一页</ span> <span class =“current”> 1 </ span> <a href="#?page=2"> 2 </a> < a href =“＃？page = 3”> 3 </a> <a href="#?page=4"> 4 </a> <a href="#?page=5"> 5 </a> <a href="#?page=6"> 6 </a> <a href="#?page=2" class="disabled">后一页
-	 </a> - > </ div >
-        </ div >
+        <div id="right">
+        	<h1>{$curname}</h1>
+            <ul>
+            	<li><a href="#">[组图]我校被授予2010-2011年度省级文明单位</a>	<span class="newsdate">2013-05-10</span></li>
+	<li><a href="#">[组图]我校被评为“石家庄市2010-2011年度文明单位”</a>	<span class="newsdate">2013-05-10</span></li>	
+	<li><a href="#">[图文]我校被授予“2012年高中教学先进单位”“2012年高中增值奖”等荣誉称号</a>	<span class="newsdate">2013-05-10</span></li>
+	<li><a href="#">[组图]我校被授予“河北省体育传统项目学校”荣誉称号</a>	<span class="newsdate">2013-05-10</span>	</li>
+	<li>[组图]我校被授予“影子教师”培训基地<span class="newsdate">2013-05-10</span></li>		
+	<li>[组图]我校荣获“2010-2012年石家庄市创先争优先进基层党组织荣誉称号<span class="newsdate">2013-05-10</span></li>
+	<li>[组图]我校荣获石家庄市妇联系统先进集体称号	<span class="newsdate">2013-05-10</span></li>
+	<li>[组图]我校离退休干部党支部被评为“先进离退休干部党支部”荣誉称号	<span class="newsdate">2013-05-10</span></li>
+	<li>[图文]我校获得“全国青少年普法教育先进单位”荣誉称号<span class="newsdate">2013-05-10</span></li>	
+	<li>[组图]我校荣获“2010年度住房公积金管理先进单位”荣誉称号<span class="newsdate">2013-05-10</span></li>
+	<li>[图文]我校荣获石家庄市“2010年度实绩突出领导班子”荣誉称号<span class="newsdate">2013-05-10</span></li>
+	<li>[组图]我校荣获石家庄市2008—2009年度文明单位光荣称号	<span class="newsdate">2013-05-10</span></li>
+	<li>[图文]我校党委荣获2009年度先进基层党组织称号<span class="newsdate">2013-05-10</span></li>	
+	<li>[组图]我校荣获首批“河北省现代教育技术示范学校”	<span class="newsdate">2013-05-10</span></li>
+	<li>[组图]我校被评为“首届中华百年名校”<span class="newsdate">2013-05-10</span></li>	
+	<li>[图文]我校荣获石家庄市“先进基层党组织”荣誉称号	<span class="newsdate">2013-05-10</span></li>
+	<li>[图文]我校荣获“2007年度实绩突出领导班子”称号<span class="newsdate">2013-05-10</span></li>	
+	<li>[图文]我校荣获“2007年度民主评议工作先进单位”荣誉	<span class="newsdate">2013-05-10</span></li>
+	<li>[组图]我校荣获石家庄市2008年中小学田径运动会“体育道德风尚奖”<span class="newsdate">2013-05-10</span>	</li>
+	<li>[组图]我校被石家庄市委市政府评为“双争共建文明校园”	<span class="newsdate">2013-05-10</span></li>
+            </ul>
+            <div id="page">
+	<span class="disabled">前一页</span><span class="current">1</span><a href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a href="#?page=5">5</a><a href="#?page=6">6</a><a href="#?page=2" class="disabled">后一页 
+	 </a></div>
+        </div>
  
-      </ div >
+      </div>
  
-	< div  id = “ foot ” >	  
- 		版权所有©2008-2013 http：//www.***.com保留所有权利网站备案：冀ICP备00000000号
-	</ div >
-</ body >
-< script  type = “ text / javascript ”  src = “ js / pic.js ” > </ script >
-</ html>
+	<div id="foot">	  
+ 		Copyright © 2008－2013 http://www.***.com All Rights Reserved   网站备案：冀ICP备00000000号
+	</div>
+</body>
+<script type="text/javascript" src="{JS_PATH}/hbschool/pic.js"></script>
+</html>
