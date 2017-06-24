@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>河北中学</title>
-<link href="{CSS_PATH}/hbschool/news.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}/HBschool/news.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -12,7 +12,25 @@
     	<div id="top">
         	<div class="menu">
             	<ul>
-                	<li>网站首页</li>
+                 <li>网站首页</li><!--没有任何效果只获取后边的是11个不需要动态获取-->
+                     {pc:content 
+                    <!-- 获取出来 -->
+                   action="category"
+                   catid="0" 
+                   order="listorder ASC"
+                   num="11"
+                   siteid="$siteid"}
+
+                   <!-- 显示出来$v代表11条数据 -->
+
+                    {loop $data $v}
+                        <!--这里面是找一对li写出结构-->
+                        <li><a href="{$v['url']}">{$v['catname']}</a></li>
+                        <!--在数据库中category中找到栏目名称对应的内容-->
+                            
+
+                    {/loop}{/pc}
+                	<!-- <li>网站首页</li>
                     <li><a href="#">学校概况</a></li>
                     <li><a href="#">规章制度</a></li>
                     <li><a href="#">德育网</a></li>
@@ -23,7 +41,7 @@
                     <li><a href="#">校友会</a></li>
                     <li><a href="#">河中论坛</a></li>
                     <li><a href="#">查询系统</a></li>
-                    <li><a href="#" class="specil">东校区</a></li>                    
+                    <li><a href="#" class="specil">东校区</a></li>         -->            
                 </ul>
             </div>           
         </div>
@@ -48,12 +66,12 @@
           <h1></h1>
            	<div id="colee" >
 <div id="colee1">
-<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
-<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
-<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
-<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
-<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
-<p> <img src="{IMG_PATH}/hbschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/HBschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/HBschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/HBschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/HBschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/HBschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
+<p> <img src="{IMG_PATH}/HBschool/pic.gif" width="200" height="150" />2010-2011年度先进单位</p>
 
 </div>
 <div id="colee2"></div>
@@ -63,9 +81,15 @@
         </div>
         
         <div id="right">
-        	<h1>所获荣誉</h1>
+        	<h1><h1>{$catname}</h1></h1>
             <ul>
-            	<li><a href="#">[组图]我校被授予2010-2011年度省级文明单位</a>	<span class="newsdate">2013-05-10</span></li>
+            {pc:content action="lists" catid="$catid" num="15" order="inputtime DESC" page="$page"}
+{loop $data $v}
+<li><a href="{$v['url']}">{str_cut($v['title'],90)} </a>
+<span class="newsdate">{date('Y-m-d',$v['inputtime'])}</span></li>
+{/loop}
+{/pc}
+            	<!-- <li><a href="#">[组图]我校被授予2010-2011年度省级文明单位</a>	<span class="newsdate">2013-05-10</span></li>
 	<li><a href="#">[组图]我校被评为“石家庄市2010-2011年度文明单位”</a>	<span class="newsdate">2013-05-10</span></li>	
 	<li><a href="#">[图文]我校被授予“2012年高中教学先进单位”“2012年高中增值奖”等荣誉称号</a>	<span class="newsdate">2013-05-10</span></li>
 	<li><a href="#">[组图]我校被授予“河北省体育传统项目学校”荣誉称号</a>	<span class="newsdate">2013-05-10</span>	</li>
@@ -84,7 +108,7 @@
 	<li>[图文]我校荣获“2007年度实绩突出领导班子”称号<span class="newsdate">2013-05-10</span></li>	
 	<li>[图文]我校荣获“2007年度民主评议工作先进单位”荣誉	<span class="newsdate">2013-05-10</span></li>
 	<li>[组图]我校荣获石家庄市2008年中小学田径运动会“体育道德风尚奖”<span class="newsdate">2013-05-10</span>	</li>
-	<li>[组图]我校被石家庄市委市政府评为“双争共建文明校园”	<span class="newsdate">2013-05-10</span></li>
+	<li>[组图]我校被石家庄市委市政府评为“双争共建文明校园”	<span class="newsdate">2013-05-10</span></li> -->
             </ul>
             <div id="page">
 	<span class="disabled">前一页</span><span class="current">1</span><a href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a href="#?page=5">5</a><a href="#?page=6">6</a><a href="#?page=2" class="disabled">后一页 
